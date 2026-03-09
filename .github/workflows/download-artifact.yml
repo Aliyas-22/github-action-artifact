@@ -30,11 +30,11 @@ jobs:
           uses:  actions/download-artifact@v4
           with:
             name: testing-report
-            path: build.txt
+            path: downloaded-files
 
         - name: print the downloaded file
           run: |
                echo "Print the downloaded file"
-               cat build.txt
+               cat downloaded-files/build.txt
      
         
