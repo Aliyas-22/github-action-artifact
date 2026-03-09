@@ -1,0 +1,20 @@
+# Pass a secret to a step as an environment variable
+# Use it in a shell command without ever hardcoding it
+# Add DOCKER_USERNAME and DOCKER_TOKEN as secrets (you'll need these on Day 45)
+
+name: Enviroment variable practice
+
+on:
+  push:
+    branches: [main]
+jobs:
+  my-details:
+    runs-on: ubuntu-latest
+    steps:
+     -  name: checking my secrets
+        env:
+         MY_USERNAME: ${{ secrets.DOCKER_USERNAME }} 
+        run: |
+          echo "Running command with secret..."
+          username "$MY_USERNAME" 
+
