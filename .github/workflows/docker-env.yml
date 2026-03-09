@@ -14,7 +14,6 @@ jobs:
      -  name: checking my secrets
         env:
          MY_USERNAME: ${{ secrets.DOCKER_USERNAME }} 
-        run: |
-          echo "Running command with secret..."
-          username "$MY_USERNAME" 
+        run: | 
+          echo "Running command with secret "$MY_USERNAME" 
 
